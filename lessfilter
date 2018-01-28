@@ -6,8 +6,11 @@ case "$1" in
     *.lsp|*.l|*.pas|*.p|*.xml|*.xps|*.xsl|*.axp|*.ppd|*.pov|\
     *.diff|*.patch|*.py|*.rb|*.sql|*.ebuild|*.eclass)
         pygmentize -O style=monokai -f 256 "$1";;
-    .bashrc|.bash_aliases|.bash_environment|.zshrc)
+    *.bashrc|*.bash_aliases|*.bash_environment|*.zshrc)
         pygmentize -O style=monokai -f 256 -l sh "$1"
+        ;;
+    *.gitconfig)
+        pygmentize -O style=monokai -f 256 -l cfg "$1"
         ;;
     *)
         grep "#\!/bin/bash" "$1" > /dev/null
