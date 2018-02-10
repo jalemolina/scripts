@@ -1,0 +1,5 @@
+#!/bin/bash
+# comando && avisar
+# Emite una notificación al terminar la ejecución de "comando".
+
+echo -ne \\a
